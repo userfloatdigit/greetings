@@ -93,8 +93,11 @@ boxs.forEach((element) => {
 
 const img = document.getElementById("img");
 
-let factor = 1.5;
+let factor = 1.0;
+
 img.addEventListener("click", (e) => {
-  img.style.transform = `scale(${factor})`;
-  factor += 0.5;
+  if (factor < 2.4) {
+    img.style.transform = `scale(${factor})`;
+    factor += 0.2;
+  }
 });
